@@ -1,11 +1,25 @@
+# 
+#
+# makefile
+#
+# Created by John Van Note
+# 2016-09-20
+#
+#
+
 CC=g++
+src=collatz-conjecture
 
-run: collatz_conjecture.o
-	$(CC) -o collatz_conjecture.o collatz_conjecture.cpp
-	collatz_conjecture.o 
+run: $(src).o
+	$(CC) $(src).cpp -o $(src).o
+	./$(src).o 
 
-collatz_conjecture.o: collatz_conjecture.cpp
-	$(CC) -c collatz_conjecture.cpp
+test: $(src).o
+	$(CC) $(src).cpp -o $(src).out
+	./$(src).out 19
+
+collatz-conjecture.o: $(src).cpp
+	$(CC) -c $(src).cpp
 
 clean:
 	rm -rf *.o
