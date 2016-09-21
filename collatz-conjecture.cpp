@@ -19,11 +19,14 @@ int coll_conj(unsigned int n);
 // @param argv: string-vector of arguments
 // @return: 0 if everything goes well
 int main(int argc, char *argv[]) {
-        cout << coll_conj(6) << endl;
         const int ARGNUM = 2;
+
         if(argc != ARGNUM) {
-                cout << "Usage: " << argv[0] << " accepts " << ARGNUM << " arguments" << endl;
+                cout << "Usage: " << argv[0] << " accepts " 
+                        << ARGNUM << " arguments" << endl;
         }
+        unsigned int num = stoi(argv[1]);
+        cout << coll_conj(num) << endl;
         return 0;
 }
 

@@ -11,8 +11,8 @@ CC=g++
 src=collatz-conjecture
 
 run: $(src).o
-	$(CC) $(src).cpp -o $(src).o
-	./$(src).o 
+	$(CC) $(src).cpp -o $(src).out
+	./$(src).out $(ARG)
 
 test: $(src).o
 	$(CC) $(src).cpp -o $(src).out
@@ -22,4 +22,4 @@ collatz-conjecture.o: $(src).cpp
 	$(CC) -c $(src).cpp
 
 clean:
-	rm -rf *.o
+	rm -rf *.o *.out
