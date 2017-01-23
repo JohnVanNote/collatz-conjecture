@@ -7,6 +7,8 @@
 #
 #
 
+.SILENT: run collatz-conjecture.o
+
 CC=g++
 src=collatz-conjecture
 
